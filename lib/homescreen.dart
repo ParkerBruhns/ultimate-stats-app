@@ -9,16 +9,48 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Ultimate Stats'), centerTitle: true),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Welcome to Ultimate Stats!'),
-              const TeamManagementButton(),
-              const StartGameButton(),
-              const StartTournamentButton(),
-              const SettingsButton(),
-              const GamesHistory(),
+              GridView.count(
+                crossAxisCount: 2,
+                childAspectRatio: 3.0,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: const TeamManagementButton(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: const StartGameButton(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: const StartTournamentButton(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: const SettingsButton(),
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(child: const GamesHistory()),
             ],
           ),
         ),
@@ -32,14 +64,13 @@ class GamesHistory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return ListView(
-        children: const <Widget> [
-          ListTile(leading: Icon(Icons.man), title: Text("ManIcon")),
-          ListTile(leading: Icon(Icons.icecream), title: Text("Icecream Icon")),
-        ]
-      );
-    }
-
+    return ListView(
+      children: const <Widget>[
+        ListTile(leading: Icon(Icons.man), title: Text("ManIcon")),
+        ListTile(leading: Icon(Icons.icecream), title: Text("Icecream Icon")),
+      ],
+    );
+  }
 }
 
 class TeamManagementButton extends StatelessWidget {
@@ -50,6 +81,7 @@ class TeamManagementButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: _onPressed,
       child: const Text("Team Management"),
+      style: buttonStyle(),
     );
   }
 
@@ -101,4 +133,12 @@ class StartGameButton extends StatelessWidget {
   void _onPressed() {
     print("Start Game Button Pressed");
   }
+}
+
+ButtonStyle buttonStyle() {
+  return ButtonStyle(
+    padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
+      const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+    ),
+  );
 }

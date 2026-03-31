@@ -7,6 +7,8 @@
 .buildlog/
 .history
 
+.claude
+
 linux/
 macos/
 windows/
