@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'homescreen.dart';
+import 'screens/home/home_screen.dart';
 
 void main() {
   runApp(const UltimateStatsApp());
@@ -13,7 +13,7 @@ class UltimateStatsApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ultimate Stats',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
       home: const HomeScreen(),
