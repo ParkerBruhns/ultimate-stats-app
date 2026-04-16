@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Placeholder screen for app settings.
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -7,9 +8,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Settings')),
-      body: const Center(
-        child: Text('Settings Screen'),
-      ),
+      body: const Center(child: Text('Settings Screen')),
     );
   }
 }

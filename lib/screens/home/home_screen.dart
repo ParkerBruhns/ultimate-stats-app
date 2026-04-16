@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'widgets/games_history.dart';
-import 'widgets/nav_buttons.dart';
+import 'package:ultimate_stats_app/screens/home/widgets/games_history.dart';
+import 'package:ultimate_stats_app/screens/home/widgets/nav_buttons.dart';
 
+/// The main landing screen of the app.
+///
+/// Displays a 2x2 grid of navigation buttons at the top and a scrollable
+/// games history list below.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -15,6 +19,8 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              // Navigation buttons grid
+              // ============================================================
               GridView.count(
                 crossAxisCount: 2,
                 childAspectRatio: 3.5,
@@ -27,6 +33,9 @@ class HomeScreen extends StatelessWidget {
                   NavButtonAlignment(child: SettingsButton()),
                 ],
               ),
+              // ============================================================
+
+              // Games history list (fills remaining space)
               Expanded(child: GamesHistory()),
             ],
           ),
@@ -36,6 +45,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+/// Wrapper widget that centers and pads a navigation button within a grid cell.
 class NavButtonAlignment extends StatelessWidget {
   const NavButtonAlignment({super.key, required this.child});
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Placeholder screen for viewing an existing tournament's games and stats.
 class TournamentViewScreen extends StatelessWidget {
   const TournamentViewScreen({super.key});
 
@@ -7,9 +8,7 @@ class TournamentViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Tournament View')),
-      body: const Center(
-        child: Text('Tournament View Screen'),
-      ),
+      body: const Center(child: Text('Tournament View Screen')),
     );
   }
 }
